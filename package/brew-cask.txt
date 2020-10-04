@@ -1,0 +1,5 @@
+balenaetcher
+bloomrpc
+google-cloud-sdk
+karabriner-elements
+firefox

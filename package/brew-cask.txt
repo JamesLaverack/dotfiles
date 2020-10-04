@@ -1,5 +1,11 @@
 balenaetcher
 bloomrpc
 google-cloud-sdk
-karabriner-elements
+karabiner-elements
 firefox
+goland
+emacs
+docker
+iterm2
+zoomus
+slack

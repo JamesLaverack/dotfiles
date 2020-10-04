@@ -10,13 +10,13 @@ kind
 kubernetes-cli
 kustomize
 linkerd
-mini
+minio
 neofetch
 nmap
 python
 socat
 speedtest
 vim
-qy
+yq
 wget
 mas

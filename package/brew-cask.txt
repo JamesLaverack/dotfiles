@@ -7,5 +7,4 @@ goland
 emacs
 docker
 iterm2
-zoomus
 slack

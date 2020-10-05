@@ -15,13 +15,19 @@ brew install $(cat "${DIR}/package/brew.txt")
 brew cask install $(cat "${DIR}/package/brew-cask.txt")
 
 # Install Oh My ZSH
-if [ ! -d "~/.oh-my-zsh" ]
+if [[ -d "~/.oh-my-zsh" ]]
 then
+    echo "Oh My ZSH not installed, running installer…"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "Oh My ZSH already installed"
 fi
 
 # Install Spacemacs
-if [ ! -d "~/.emacs.d" ]
+if [[ -d "~/.emacs.d" ]]
 then
+    echo "Spacemacs not installed, running installer…"
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+else
+    echo "Spacemacs already installed"
 fi

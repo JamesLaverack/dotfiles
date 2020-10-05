@@ -1,0 +1,11 @@
+# Custom local machine or secret envars
+localzshenv=~/.zshenv.local
+if [ -f "${localzshenv}" ]
+then
+    source "${localzshenv}"
+fi
+
+if command -v go
+then
+   export GOPATH="$(go env GOPATH)"
+fi

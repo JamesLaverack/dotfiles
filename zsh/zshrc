@@ -1,0 +1,30 @@
+# Oh My ZSH configuration
+export ZSH=~/.oh-my-zsh
+ZSH_THEME="bernkastel"
+DISABLE_AUTO_UPDATE="true"
+COMPLETION_WAITING_DOTS="true"
+
+# Oh My ZSH plugins
+plugins=(git kubectl terraform colored-man-pages)
+
+# Custom local machine or secret config
+localzshrc=~/.zshrc.local
+if [ -f "${localzshrc}" ]
+then
+    source "${localzshrc}"
+fi
+
+# Load Oh My ZSH
+source $ZSH/oh-my-zsh.sh
+
+# Language
+export LANG=en_GB.UTF-8
+
+# Editor
+export EDITOR=vim
+
+# Include Go's custom bin on the path.
+if command -v go
+then
+   export PATH=$PATH:"$(go env GOPATH)/bin"
+fi

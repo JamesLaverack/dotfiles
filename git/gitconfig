@@ -1,0 +1,20 @@
+[user]
+	email = james.laverack@jetstack.io
+	name = James Laverack
+[push]
+	default = simple
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+[core]
+	excludesfile = ~/.global_gitignore
+[rerere]
+	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	ff = only

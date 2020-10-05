@@ -3,6 +3,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="bernkastel"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
+export ZSH_CUSTOM=~/.zsh-custom
 
 # Oh My ZSH plugins
 plugins=(git kubectl terraform colored-man-pages)

@@ -4,10 +4,11 @@ Personal configuration "dotfiles" for laptops, remote machines, etc.
 
 # Installing
 
-1. Clone the repository somewhere. (`~/.dotfiles` maybe)
-2. Run the platform-approprate script in the root directory.
-3. Perform linking
-4. Install other applications
+1. Setup a git private key, add it to GitHub
+2. Clone the repository somewhere. (`~/.dotfiles` maybe)
+3. Run the platform-approprate script in the root directory.
+4. Perform linking
+5. Install other applications
 
 # Linking
 

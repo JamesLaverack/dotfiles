@@ -9,3 +9,6 @@ if command -v go
 then
    export GOPATH="$(go env GOPATH)"
 fi
+
+export LANG=en_GB.UTF-8
+export EDITOR=vim

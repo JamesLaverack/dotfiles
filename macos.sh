@@ -59,3 +59,8 @@ then
 else
     echo "Berkastel theme already syslinked into Oh My ZSH custom directory"
 fi
+
+# Install Fonts
+fonts_dir="$HOME/Library/Fonts"
+wget -nc https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.otf --directory-prefix "${fonts_dir}"
+wget -nc https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Italic.otf --directory-prefix "${fonts_dir}"

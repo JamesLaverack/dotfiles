@@ -5,8 +5,5 @@
 # Emacs
 *~
 
-# Ticket
+# Ticket https://github.com/JamesLaverack/ticket
 .ticket
-
-# JIRA command line API https://github.com/Netflix-Skunkworks/go-jira
-.jira.d

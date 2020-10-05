@@ -17,9 +17,3 @@ fi
 
 # Load Oh My ZSH
 source $ZSH/oh-my-zsh.sh
-
-# Include Go's custom bin on the path.
-if command -v go
-then
-   export PATH=$PATH:"$(go env GOPATH)/bin"
-fi

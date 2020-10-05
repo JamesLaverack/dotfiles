@@ -11,8 +11,8 @@ fi
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Install utilities and applications
-brew install $(cat "${DIR}/brew.txt")
-brew cask install $(cat "${DIR}/brew-cask.txt")
+brew install $(cat "${DIR}/package/brew.txt")
+brew cask install $(cat "${DIR}/package/brew-cask.txt")
 
 # Install Oh My ZSH
 if [ ! -d "~/.oh-my-zsh" ]

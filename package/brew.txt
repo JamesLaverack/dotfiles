@@ -15,7 +15,7 @@ neofetch
 nmap
 python
 socat
-speedtest
+speedtest-cli
 vim
 yq
 wget

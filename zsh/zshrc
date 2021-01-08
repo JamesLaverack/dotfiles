@@ -5,6 +5,10 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 export ZSH_CUSTOM=~/.zsh-custom
 
+# GPG Agent
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # Oh My ZSH plugins
 plugins=(git kubectl terraform colored-man-pages)
 

@@ -1,5 +1,6 @@
 aspell
 git
+gnupg
 go
 gron
 helm
@@ -14,9 +15,11 @@ mas
 minio
 neofetch
 nmap
+pinentry-mac
 python
 socat
 speedtest-cli
 vim
 wget
+ykman
 yq

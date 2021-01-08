@@ -40,7 +40,7 @@ default-cache-ttl 600
 max-cache-ttl 7200
 ```
 
-An additional line `pinentry-program` should be set, followed by the full path to the `minentry-mac` executable.
+An additional line `pinentry-program` should be set, followed by the full path to the `pinentry-mac` executable.
 
 ## Other Applications
 

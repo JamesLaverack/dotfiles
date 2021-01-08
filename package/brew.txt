@@ -10,6 +10,7 @@ kind
 kubernetes-cli
 kustomize
 linkerd
+mas
 minio
 neofetch
 nmap
@@ -17,6 +18,5 @@ python
 socat
 speedtest-cli
 vim
-yq
 wget
-mas
+yq

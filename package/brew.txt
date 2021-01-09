@@ -19,6 +19,7 @@ pinentry-mac
 python
 socat
 speedtest-cli
+tree
 vim
 wget
 ykman

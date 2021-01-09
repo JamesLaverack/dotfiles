@@ -12,7 +12,7 @@ dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Install utilities and applications
 brew install $(cat "${dotfiles_dir}/package/brew.txt")
-brew cask install $(cat "${dotfiles_dir}/package/brew-cask.txt")
+brew install --cask $(cat "${dotfiles_dir}/package/brew-cask.txt")
 
 # Install Oh My ZSH
 if [[ ! -d "$HOME/.oh-my-zsh" ]]

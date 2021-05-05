@@ -18,5 +18,11 @@ then
   export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
+# Doom Emacs
+if [ -f "$HOME/.emacs.d/bin/doom" ]
+then
+  export PATH="$PATH:$HOME/.emacs.d/bin"
+fi
+
 export LANG=en_GB.UTF-8
 export EDITOR=vim

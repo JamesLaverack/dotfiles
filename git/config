@@ -8,7 +8,7 @@
 	changed = yellow
 	untracked = red
 [core]
-	excludesfile = ~/.global_gitignore
+	excludesfile = $HOME/.config/git/global_gitignore
 [rerere]
 	enabled = true
 [filter "lfs"]
@@ -20,3 +20,4 @@
 	ff = only
 [init]
 	defaultBranch = main
+

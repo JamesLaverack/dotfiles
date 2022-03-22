@@ -28,6 +28,7 @@ export LANG=en_GB.UTF-8
 export EDITOR=nvim
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
 
 # Use Podman as a Docker CLI replacement
 export DOCKER=podman

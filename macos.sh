@@ -52,3 +52,13 @@ then
 else
   echo "Alacritty config symlink exists"
 fi
+
+zsh_config_file="${HOME}/.zshrc"
+if ! [ -L "${zsh_config_file}" ]
+then
+  rm -r "${zsh_config_file}" || true
+  ln -s "${dotfiles_dir}/zshrc" "${zsh_config_file}"
+  echo "Linked zsh config"
+else
+  echo "zsh config symlink exists"
+fi

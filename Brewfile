@@ -35,6 +35,7 @@ cask "1password"
 cask "microsoft-teams"
 brew "defaultbrowser"
 brew "coreutils"
+brew "antigen"
 
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"

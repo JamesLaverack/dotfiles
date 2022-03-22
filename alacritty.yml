@@ -10,3 +10,7 @@ font:
   normal:
     family: Source Code Pro
   size: 16
+key_bindings:
+  # Required to make ⌥3 work to give "#" on the British Mac keyboard layout.
+  # xref https://github.com/alacritty/alacritty/issues/1073
+  - { key: Key3, mods: Alt, chars: "#" }

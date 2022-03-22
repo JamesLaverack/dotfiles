@@ -2,6 +2,8 @@ window:
   padding:
     x: 10
     y: 10
+  title: "Terminal"
+  dynamic_title: false
 font:
   normal:
     family: Source Code Pro

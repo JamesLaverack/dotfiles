@@ -59,6 +59,17 @@ else
   echo "Alacritty config symlink exists"
 fi
 
+alacritty_theme_file="${HOME}/.config/alacritty/dracula-theme.yml"
+mkdir -p "$(dirname ${alacritty_theme_file})"
+if ! [ -L "${alacritty_theme_file}" ]
+then
+  rm -r "${alacritty_theme_file}" || true
+  ln -s "${dotfiles_dir}/alacritty-dracula-theme.yml" "${alacritty_theme_file}"
+  echo "Linked Alacritty theme"
+else
+  echo "Alacritty theme symlink exists"
+fi
+
 neovim_config_file="${HOME}/.config/nvim/init.vim"
 mkdir -p "$(dirname ${neovim_config_file})"
 if ! [ -L "${neovim_config_file}" ]

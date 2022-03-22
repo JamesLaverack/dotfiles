@@ -48,7 +48,6 @@ else
   echo "gnupg config symlink exists"
 fi
 
-
 alacritty_config_file="${HOME}/.config/alacritty/alacritty.yml"
 mkdir -p "$(dirname ${alacritty_config_file})"
 if ! [ -L "${alacritty_config_file}" ]
@@ -58,6 +57,17 @@ then
   echo "Linked Alacritty config"
 else
   echo "Alacritty config symlink exists"
+fi
+
+neovim_config_file="${HOME}/.config/nvim/init.vim"
+mkdir -p "$(dirname ${neovim_config_file})"
+if ! [ -L "${neovim_config_file}" ]
+then
+  rm -r "${neovim_config_file}" || true
+  ln -s "${dotfiles_dir}/neovim.vim" "${neovim_config_file}"
+  echo "Linked Neovim config"
+else
+  echo "Neovim config symlink exists"
 fi
 
 zsh_config_file="${HOME}/.zshrc"

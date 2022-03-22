@@ -8,7 +8,7 @@
 	changed = yellow
 	untracked = red
 [core]
-	excludesfile = $HOME/.config/git/global_gitignore
+	excludesfile = ~/.config/git/global_gitignore
 [rerere]
 	enabled = true
 [filter "lfs"]

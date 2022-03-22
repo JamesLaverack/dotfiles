@@ -1,9 +1,7 @@
-# IntelliJ IDEA
+# IntelliJ IDEA & other JetBrains IDEs
 *.idea
 *.iml
 
-# Emacs
-*~
+# macOS files
+.DS_Store
 
-# Ticket https://github.com/JamesLaverack/ticket
-.ticket

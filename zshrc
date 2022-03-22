@@ -29,6 +29,10 @@ export EDITOR=nvim
 alias vim="nvim"
 alias vi="nvim"
 
+# Use Podman as a Docker CLI replacement
+export DOCKER=podman
+alias docker="podman"
+
 antigen theme jameslaverack/bernkastel@main bernkastel.zsh-theme
 
 antigen apply

@@ -11,7 +11,6 @@ cd ${dotfiles_dir}
 
 # Install brew-managed software
 brew bundle
-brew bundle cleanup --force
 
 # Set Basic Settings
 defaultbrowser firefox

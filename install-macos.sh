@@ -43,11 +43,12 @@ else
 fi
 
 
-alacritty_config_dir="${HOME}/.config/alacritty"
-if ! [ -L "${alacritty_config_dir}" ]
+alacritty_config_file="${HOME}/.config/alacritty/alacritty.yml"
+mkdir -p "$(dirname ${alacritty_config_file})"
+if ! [ -L "${alacritty_config_file}" ]
 then
-  rm -r "${alacritty_config_dir}" || true
-  ln -s "${dotfiles_dir}/alacritty" "${alacritty_config_dir}"
+  rm -r "${alacritty_config_file}" || true
+  ln -s "${dotfiles_dir}/alacritty.yml" "${alacritty_config_file}"
   echo "Linked Alacritty config"
 else
   echo "Alacritty config symlink exists"

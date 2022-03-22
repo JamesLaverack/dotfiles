@@ -1,0 +1,9 @@
+window:
+  padding:
+    x: 10
+    y: 10
+  decorations: buttonless
+font:
+  normal:
+    family: Source Code Pro
+  size: 16

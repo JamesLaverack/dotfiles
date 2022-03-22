@@ -42,3 +42,13 @@ else
   echo "gnupg config symlink exists"
 fi
 
+
+alacritty_config_dir="${HOME}/.config/alacritty"
+if ! [ -L "${alacritty_config_dir}" ]
+then
+  rm -r "${alacritty_config_dir}" || true
+  ln -s "${dotfiles_dir}/alacritty" "${alacritty_config_dir}"
+  echo "Linked Alacritty config"
+else
+  echo "Alacritty config symlink exists"
+fi

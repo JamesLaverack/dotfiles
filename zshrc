@@ -23,8 +23,11 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 
 export LANG=en_GB.UTF-8
+
+# Vim config
 export EDITOR=nvim
 alias vim="nvim"
+alias vi="nvim"
 
 antigen theme jameslaverack/bernkastel@main bernkastel.zsh-theme
 

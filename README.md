@@ -16,5 +16,5 @@ cd dotfiles
 Then:
 1. Launch Firefox
 2. Install extensions
-3. `./install-arkenfox.sh`
+3. `./install-firefox-profile.sh`
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "This script applies macOS system tweaks and prefences. System applications may restart."
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'

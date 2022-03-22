@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+echo "ℹ️ This script installs things on macOS. It is idempotent, and safe to re-run."
+
 # Install Homebrew if not already installed
+echo "🍺 Installing Homebrew"
 if ! command -v brew &> /dev/null
 then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -10,18 +13,21 @@ dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd ${dotfiles_dir}
 
 # Install brew-managed software
+echo "💻 Installing & updating brew-managed software"
 brew bundle
 
 # Set Basic Settings
+echo "🌎 Setting Firefox as the default browser"
 defaultbrowser firefox
 
-# I prefer to use $HOME/github.com as a location for GitHub repositories
+echo "📁 Creating useful directories"
 mkdir -p ${HOME}/github.com/
 mkdir -p ${HOME}/Pictures/Screenshots/
 mkdir -p ${HOME}/.gnupg/
 
 # Symlink everything
 
+echo "🔗 Symlinking config files"
 git_config_dir="${HOME}/.config/git"
 if ! [ -L "${git_config_dir}" ]
 then
@@ -63,3 +69,5 @@ then
 else
   echo "zsh config symlink exists"
 fi
+
+echo "🚀 Done"

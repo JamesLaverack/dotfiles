@@ -5,8 +5,11 @@ echo "🦊 You need to have launched Firefox at least once for this to work"
 echo "🔪 Closing Firefox"
 killall "firefox" &> /dev/null
 
-firefox_profile="$(find ${HOME}/Library/Application\ Support/Firefox/Profiles -type d -name '*.default*' | head -n1)"
+firefox_profile="$(find ${HOME}/Library/Application\ Support/Firefox/Profiles -type d -name '*.default-release' | head -n1)"
 echo "👤 Found firefox profile at ${firefox_profile}"
+
+dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${dotfiles_dir}
 
 arkenfox_overrides_file="${firefox_profile}/user-overrides.js"
 if ! [ -L "${arkenfox_overrides_file}" ]
@@ -30,6 +33,7 @@ fi
 
 echo "🔄 Running Arkenfox updater script"
 cd "${firefox_profile}"
+chmod +x updater.sh
 bash updater.sh
 
 arkenfox_cleaner_script="${firefox_profile}/prefsCleaner.sh"
@@ -44,6 +48,7 @@ fi
 
 echo "🧹 Running Arkenfox cleaner script"
 cd "${firefox_profile}"
+chmod +x prefsCleaner.sh
 bash prefsCleaner.sh
 
 echo "🚀 Done"

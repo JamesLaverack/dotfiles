@@ -27,5 +27,7 @@ export LANG=en_GB.UTF-8
 export EDITOR=nvim
 alias vim="nvim"
 
+antigen theme jameslaverack/bernkastel@main bernkastel.zsh-theme
+
 antigen apply
 

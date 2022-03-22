@@ -19,6 +19,7 @@ defaultbrowser firefox
 # I prefer to use $HOME/github.com as a location for GitHub repositories
 mkdir -p ${HOME}/github.com/
 mkdir -p ${HOME}/Pictures/Screenshots/
+mkdir -p ${HOME}/.gnupg/
 
 # Symlink everything
 
@@ -30,5 +31,15 @@ then
   echo "Linked git config"
 else
   echo "git config symlink exists"
+fi
+
+gnupg_config_file="${HOME}/.gnupg/gpg-agent.conf"
+if ! [ -L "${gnupg_config_file}" ]
+then
+  rm -r "${gnupg_config_file}" || true
+  ln -s "${dotfiles_dir}/gpg-agent.conf" "${gnupg_config_file}"
+  echo "Linked gnupg config"
+else
+  echo "gnupg config symlink exists"
 fi
 

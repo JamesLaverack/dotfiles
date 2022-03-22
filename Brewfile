@@ -34,6 +34,7 @@ cask "alacritty"
 cask "1password"
 cask "microsoft-teams"
 brew "defaultbrowser"
+brew "coreutils"
 
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"

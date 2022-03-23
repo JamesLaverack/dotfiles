@@ -16,6 +16,17 @@ cd ${dotfiles_dir}
 echo "💻 Installing & updating brew-managed software"
 brew bundle
 
+# TMUX Package Manager
+echo "🪟 Installing the tmux package manager"
+tmux_install_dir="${HOME}/.config/tmux/plugins/tpm"
+if ! [ -d "${tmux_install_dir}" ]
+then
+  git clone https://github.com/tmux-plugins/tpm "${tmux_install_dir}"
+  echo "Installed tmux plugin manager"
+else
+  echo "tmux plugin manager already installed"
+fi
+
 # Set Basic Settings
 echo "🌎 Setting Firefox as the default browser"
 defaultbrowser firefox
@@ -79,6 +90,17 @@ then
   echo "Linked Neovim config"
 else
   echo "Neovim config symlink exists"
+fi
+
+tmux_config_file="${HOME}/.config/tmux/tmux.conf"
+mkdir -p "$(dirname ${tmux_config_file})"
+if ! [ -L "${tmux_config_file}" ]
+then
+  rm -r "${tmux_config_file}" || true
+  ln -s "${dotfiles_dir}/tmux.conf" "${tmux_config_file}"
+  echo "Linked tmux config"
+else
+  echo "tmux config symlink exists"
 fi
 
 zsh_config_file="${HOME}/.zshrc"

@@ -18,7 +18,10 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 """""""""""""""""""
 
 call plug#begin()
+
+" Dracula theme
 Plug 'Mofiqul/dracula.nvim'
+
 call plug#end()
 
 """""""""""""""""
@@ -33,4 +36,3 @@ set number
 " consistency.
 set termguicolors
 colorscheme dracula
-

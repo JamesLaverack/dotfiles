@@ -2,9 +2,19 @@ cask_args appdir: "/Applications"
 
 tap "homebrew/cask"
 
-brew "zsh"
+# Source control
 brew "git"
 brew "svn"
+
+# Terminal & Editors
+brew "antigen"
+brew "neovim"
+brew "zsh"
+
+# Utilities
+brew "coreutils"
+brew "defaultbrowser"
+brew "gron"
 brew "htop"
 brew "jq"
 brew "nmap"
@@ -12,31 +22,35 @@ brew "tree"
 brew "watch"
 brew "wget"
 brew "yq"
-cask "google-cloud-sdk"
-cask "firefox"
-brew "go"
-brew "kubernetes-cli"
-brew "kubebuilder"
+
+# Kubernetes & Containers
 brew "kind"
+brew "kubebuilder"
+brew "kubernetes-cli"
 brew "kustomize"
-brew "pinentry-mac"
+brew "podman"
+
+# Language Toolchains
+brew "go"
+
+# Security
 brew "gnupg"
+brew "pinentry-mac"
+
+# Applications
+cask "1password"
+cask "alacritty"
+cask "firefox"
+cask "goland"
+cask "google-chrome"
+cask "google-cloud-sdk"
 cask "gpg-suite"
-cask "zoom"
+cask "microsoft-teams"
 cask "notion"
 cask "slack"
-cask "google-chrome"
-brew "podman"
-brew "gron"
-brew "neovim"
-cask "goland"
-cask "alacritty"
-cask "1password"
-cask "microsoft-teams"
-brew "defaultbrowser"
-brew "coreutils"
-brew "antigen"
+cask "zoom"
 
+# Fonts
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"
 

@@ -29,7 +29,6 @@ brew "kind"
 brew "kubebuilder"
 brew "kubernetes-cli"
 brew "kustomize"
-brew "podman"
 
 # Language Toolchains
 brew "go"

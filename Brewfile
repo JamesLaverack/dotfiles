@@ -9,6 +9,7 @@ brew "svn"
 
 # Terminal & Editors
 brew "antigen"
+brew "bash"
 brew "neovim"
 brew "zsh"
 

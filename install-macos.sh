@@ -35,18 +35,30 @@ echo "📁 Creating useful directories"
 mkdir -p ${HOME}/github.com/
 mkdir -p ${HOME}/Pictures/Screenshots/
 mkdir -p ${HOME}/.gnupg/
+mkdir -p ${HOME}/.config/git
 
 # Symlink everything
 
 echo "🔗 Symlinking config files"
-git_config_dir="${HOME}/.config/git"
-if ! [ -L "${git_config_dir}" ]
+
+git_config_file="${HOME}/.config/git/config"
+if ! [ -L "${git_config_file}" ]
 then
-  rm -r "${git_config_dir}" || true
-  ln -s "${dotfiles_dir}/git" "${git_config_dir}"
+  rm -r "${git_config_file}" || true
+  ln -s "${dotfiles_dir}/git-config" "${git_config_file}"
   echo "Linked git config"
 else
   echo "git config symlink exists"
+fi
+
+git_global_ignore_file="${HOME}/.config/git/global_gitignore"
+if ! [ -L "${git_global_ignore_file}" ]
+then
+  rm -r "${git_global_ignore_file}" || true
+  ln -s "${dotfiles_dir}/git-global-ignore" "${git_global_ignore_file}"
+  echo "Linked git global_ignore"
+else
+  echo "git global_ignore symlink exists"
 fi
 
 gnupg_config_file="${HOME}/.gnupg/gpg-agent.conf"

@@ -15,6 +15,7 @@ brew "zsh"
 # Utilities
 brew "coreutils"
 brew "defaultbrowser"
+brew "exa"
 brew "gron"
 brew "htop"
 brew "jq"

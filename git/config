@@ -1,23 +1,30 @@
 [user]
 	email = james@jameslaverack.com
 	name = James Laverack
+
 [push]
 	default = simple
+
 [color "status"]
 	added = green
 	changed = yellow
 	untracked = red
+
 [core]
 	excludesfile = ~/.config/git/global_gitignore
+
 [rerere]
 	enabled = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [pull]
 	ff = only
+
 [init]
 	defaultBranch = main
 

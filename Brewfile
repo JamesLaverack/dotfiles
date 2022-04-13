@@ -4,6 +4,7 @@ tap "homebrew/cask"
 
 # Source control
 brew "git"
+brew "git-delta"
 brew "svn"
 
 # Terminal & Editors

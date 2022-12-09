@@ -31,7 +31,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
-antigen theme jameslaverack/bernkastel@main bernkastel.zsh-theme
-
 antigen apply
 
+# TODO Use a ZSH plugin for this
+eval "$(starship init zsh)"

@@ -125,4 +125,14 @@ else
   echo "zsh config symlink exists"
 fi
 
+starship_config_file="${HOME}/.config/starship.toml"
+if ! [ -L "${starship_config_file}" ]
+then
+  rm -r "${starship_config_file}" || true
+  ln -s "${dotfiles_dir}/starship.toml" "${starship_config_file}"
+  echo "Linked starship config"
+else
+  echo "starship config symlink exists"
+fi
+
 echo "🚀 Done"

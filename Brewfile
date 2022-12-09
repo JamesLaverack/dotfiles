@@ -12,6 +12,7 @@ brew "antigen"
 brew "bash"
 brew "neovim"
 brew "zsh"
+brew "starship"
 
 # Utilities
 brew "coreutils"
@@ -56,4 +57,5 @@ cask "zoom"
 # Fonts
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"
+cask "font-sauce-code-pro-nerd-font"
 

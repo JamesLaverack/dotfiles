@@ -35,6 +35,7 @@ brew "kustomize"
 
 # Language Toolchains
 brew "go"
+brew "rustup"
 
 # Security
 brew "gnupg"

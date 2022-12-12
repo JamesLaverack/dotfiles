@@ -1,5 +1,3 @@
-require('plugins')
-
 -- Line numbers
 vim.cmd [[set number]]
 
@@ -8,6 +6,9 @@ vim.cmd [[set number]]
 -- consistency.
 vim.cmd[[colorscheme dracula]]
 vim.cmd[[set termguicolors]]
+
+-- Leader key
+vim.g.mapleader = " "
 
 -- Mason
 require("mason").setup()
@@ -134,4 +135,10 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
+-- FloaTerm configuration
+local map = require("utils").map
+
+map('n', "<leader>ft", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR> ")
+map('n', "t", ":FloatermToggle myfloat<CR>")
+map('t', "<Esc>", "<C-\\><C-n>:q<CR>")
 

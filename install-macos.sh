@@ -93,15 +93,15 @@ else
   echo "Alacritty theme symlink exists"
 fi
 
-neovim_config_file="${HOME}/.config/nvim/init.vim"
-mkdir -p "$(dirname ${neovim_config_file})"
-if ! [ -L "${neovim_config_file}" ]
+neovim_config_dir="${HOME}/.config/nvim"
+mkdir -p "$(dirname ${neovim_config_dir})"
+if ! [ -L "${neovim_config_dir}" ]
 then
-  rm -r "${neovim_config_file}" || true
-  ln -s "${dotfiles_dir}/neovim.vim" "${neovim_config_file}"
-  echo "Linked Neovim config"
+  rm -r "${neovim_config_dir}" || true
+  ln -s "${dotfiles_dir}/nvim/" "${neovim_config_dir}"
+  echo "Linked Neovim Lua config"
 else
-  echo "Neovim config symlink exists"
+  echo "Neovim Lua config symlink exists"
 fi
 
 tmux_config_file="${HOME}/.config/tmux/tmux.conf"

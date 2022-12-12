@@ -13,3 +13,29 @@ require('lualine').setup {
 
 -- Enable which-key with default settings
 require('which-key').setup {}
+
+-- Tree-sitter does syntax highlighting and folding
+require('nvim-treesitter.configs').setup {
+  -- This requires we use a HEAD build of neovim from homebrew that doesn't include the lua parser
+  ensure_installed = { 'lua' },
+  highlight = {
+    enable = true,
+  },
+}
+
+-- Mason manages LSPs
+require('mason').setup {}
+require("mason-lspconfig").setup {}
+
+-- Sumneko LSP for Lua
+require('lspconfig').sumneko_lua.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+    },
+  },
+}
+

@@ -11,5 +11,12 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   -- which-key explains what mappings do, because I always forget
   use 'folke/which-key.nvim'
+  -- tree-sitter is a framework to do syntax highlighting and code folding. nvim-treesitter is a way to do this from vim.
+  use 'nvim-treesitter/nvim-treesitter'
+  -- mason is used to install and manage LSPs, lspconfig is a set of configurations for those LSPs, and mason-lspconfig
+  -- bridges the two.
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
 end)
 

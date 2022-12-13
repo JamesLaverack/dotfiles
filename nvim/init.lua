@@ -15,13 +15,18 @@ require('lualine').setup {
 require('which-key').setup {}
 
 -- Tree-sitter does syntax highlighting and folding
+--[[
 require('nvim-treesitter.configs').setup {
   -- This requires we use a HEAD build of neovim from homebrew that doesn't include the lua parser
   ensure_installed = { 'lua' },
   highlight = {
+    disable = true,
+  },
+  indent = {
     enable = true,
   },
 }
+]]--
 
 -- Mason manages LSPs
 require('mason').setup {}
@@ -39,3 +44,6 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
+require('cmp').setup {
+
+}

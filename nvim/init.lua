@@ -4,6 +4,9 @@ require('plugins')
 -- Visual Theme
 vim.cmd[[colorscheme dracula]]
 
+-- Line Numers
+vim.wo.number = true
+
 -- Lualine, along with it's theme information
 require('lualine').setup {
   options = {
@@ -28,7 +31,8 @@ require('nvim-treesitter.configs').setup {
 }
 ]]--
 
--- Mason manages LSPs
+-- Mason manages Language Server Protocol (LSPs). These LSP implementations bring "IDE"
+-- features to the editor for the language they are configured for.
 require('mason').setup {}
 require("mason-lspconfig").setup {}
 
@@ -44,6 +48,14 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
+-- cmp does completion, sourcing completing suggestions from the LSP.
 require('cmp').setup {
-
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp', keyword_length = 3 },
+    { name = 'nvim_lsp_signature_help'},
+    { name = 'nvim_lua', keyword_length = 2},
+    { name = 'buffer', keyword_length = 2 },
+  }
 }
+

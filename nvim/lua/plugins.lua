@@ -21,5 +21,8 @@ return require('packer').startup(function(use)
   -- cmp is a completion framework, complete with completion sources for various things
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
 end)
 

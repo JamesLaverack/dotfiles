@@ -26,5 +26,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
 	-- lua-snip is a snippets framework, required for cmp
 	use 'L3MON4D3/LuaSnip'
+	-- floaterm puts a "floating" terminal in Neovim
+	use 'voldikss/vim-floaterm'
 end)
 

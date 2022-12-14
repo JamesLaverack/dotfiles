@@ -128,3 +128,8 @@ require('lspconfig').rust_analyzer.setup {
 	capabilities = capabilities,
 }
 
+-- Floaterm
+vim.keymap.set('n', '<leader>ft', ':FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 zsh <CR> ', desc(opts, "New Floaterm"))
+vim.keymap.set('n', 't', ':FloatermToggle myfloat<CR>', desc(opts, "Open Floaterm Window"))
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>:q<CR>', desc(opts, "Close Floaterm Window"))
+

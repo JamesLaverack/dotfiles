@@ -28,5 +28,8 @@ return require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip'
 	-- floaterm puts a "floating" terminal in Neovim
 	use 'voldikss/vim-floaterm'
+	-- project mangaement stuff
+	use 'ahmedkhalf/project.nvim'
+	use 'nvim-tree/nvim-tree.lua'
 end)
 

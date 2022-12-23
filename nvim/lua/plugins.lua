@@ -31,5 +31,7 @@ return require('packer').startup(function(use)
 	-- project mangaement stuff
 	use 'ahmedkhalf/project.nvim'
 	use 'nvim-tree/nvim-tree.lua'
+	-- Whitespace highlighting
+	use 'lukas-reineke/indent-blankline.nvim'
 end)
 

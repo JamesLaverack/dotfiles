@@ -20,6 +20,9 @@ symbol = " "
 
 [directory]
 read_only = " "
+truncate_to_repo = false
+before_repo_root_style = "cyan dimmed"
+repo_root_style = "cyan"
 
 [docker_context]
 symbol = " "

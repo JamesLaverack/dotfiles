@@ -18,3 +18,10 @@ Then:
 2. Install extensions
 3. `./install-firefox-profile.sh`
 
+## Manual Config
+
+* Site-local git config (principally default email address)
+* Site-local Homebrew packages
+* Install Packer for nvim
+* Install language servers via Mason in nvim
+* Configure gpg-agent correctly

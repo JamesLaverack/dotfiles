@@ -1,4 +1,7 @@
-# Oh My ZSH configuration
+# Correctly source Homebrew to be able to use Antigen and others
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Oh My ZSH
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 DISABLE_AUTO_UPDATE="true"
@@ -37,8 +40,13 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:${PATH}"
 antigen apply
 
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+
+# Cilium CLI config
+export CILIUM_CLI_MODE="helm"
+
+# Go
+export PATH="${PATH}:$(go env GOPATH)/bin"
 
 # TODO Use a ZSH plugin for this
 eval "$(starship init zsh)"

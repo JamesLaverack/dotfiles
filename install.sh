@@ -1,6 +1,12 @@
 #!/usr/bin/env zsh
 
-echo "ℹ️ This script installs things on macOS. It is idempotent, and safe to re-run."
+echo "ℹ️  Setting up dotfiles"
+
+if [[ $(uname -s) != "Darwin" ]]
+then
+  echo "❌ This system is not a macOS system, found: $(uname -s). Exiting."
+  exit -1
+fi
 
 # Install Homebrew if not already installed
 echo "🍺 Installing Homebrew"

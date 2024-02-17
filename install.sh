@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo "ℹ️ This script installs things on macOS. It is idempotent, and safe to re-run."
 

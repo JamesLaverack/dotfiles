@@ -48,5 +48,8 @@ export CILIUM_CLI_MODE="helm"
 # Go
 export PATH="${PATH}:$(go env GOPATH)/bin"
 
+# Run any local settings files
+source local/*.zsh
+
 # TODO Use a ZSH plugin for this
 eval "$(starship init zsh)"

@@ -34,6 +34,7 @@ alias v="nvim"
 antigen apply
 
 # Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # TODO Use a ZSH plugin for this

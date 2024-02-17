@@ -49,7 +49,10 @@ export CILIUM_CLI_MODE="helm"
 export PATH="${PATH}:$(go env GOPATH)/bin"
 
 # Run any local settings files
-source local/*.zsh
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/local/*.zsh"(#qN) ]]
+then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/local/*.zsh"
+fi
 
 # TODO Use a ZSH plugin for this
 eval "$(starship init zsh)"

@@ -1,98 +1,108 @@
 [aws]
-symbol = "  "
+symbol = "aws:"
 disabled = true
 
 [gcloud]
-symbol = "  "
+symbol = "gcloud:"
 format = 'on [$symbol$project(\($region\))]($style) '
 
 [buf]
-symbol = " "
+symbol = ":"
 
 [c]
-symbol = " "
+symbol = "C:"
 
 [conda]
-symbol = " "
+symbol = "conda:"
 
 [dart]
-symbol = " "
+symbol = "dart:"
 
 [directory]
-read_only = " "
+read_only = "read-only"
 truncate_to_repo = false
 before_repo_root_style = "cyan dimmed"
 repo_root_style = "cyan"
 
 [docker_context]
-symbol = " "
+symbol = "docker:"
 
 [elixir]
-symbol = " "
+symbol = "elixr:"
 
 [elm]
-symbol = " "
+symbol = "elm:"
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
 
 [git_branch]
-symbol = " "
+disabled = false
+symbol = "branch:"
 
 [git_metrics]
-disabled = false
+disabled = true
+
+[git_status]
+disabled = true
 
 [golang]
-symbol = " "
+symbol = "go:"
 
 [haskell]
-symbol = " "
+symbol = "haskell:"
 
 [hg_branch]
-symbol = " "
+symbol = "branch:"
 
 [java]
-symbol = " "
+symbol = "java:"
 
 [julia]
-symbol = " "
+symbol = "julia:"
 
 [lua]
-symbol = " "
+symbol = "lua:"
 
 [memory_usage]
-symbol = " "
+symbol = "mem:"
 
 [meson]
-symbol = "喝 "
+symbol = "meson:"
 
 [nim]
-symbol = " "
+symbol = "nim:"
 
 [nix_shell]
-symbol = " "
+symbol = "nix:"
 
 [nodejs]
-symbol = " "
+symbol = "nodejs:"
 
 [package]
-symbol = " "
+symbol = "package:"
 
 [python]
-symbol = " "
+symbol = "python:"
 
 [rlang]
-symbol = "ﳒ "
+symbol = "R:"
 
 [ruby]
-symbol = " "
+symbol = "ruby:"
 
 [rust]
-symbol = " "
+symbol = "rust:"
 
 [scala]
-symbol = " "
+symbol = "scala:"
 
 [spack]
-symbol = "🅢 "
+symbol = "spack:"
 
 [kubernetes]
-#symbol = "ﴱ "
+symbol = "kube:"
 disabled = false

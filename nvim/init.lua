@@ -51,10 +51,10 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, desc(opts, "Go to next diagn
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, desc(opts, "Set diagnostic loc list"))
 
 -- Pretend like I'm good at Vim
-vim.keymap.set('', '<up>', '<nop>')
-vim.keymap.set('', '<down>', '<nop>')
-vim.keymap.set('', '<left>', '<nop>')
-vim.keymap.set('', '<right>', '<nop>')
+vim.keymap.set({''}, '<up>', '<nop>')
+vim.keymap.set({''}, '<down>', '<nop>')
+vim.keymap.set({''}, '<left>', '<nop>')
+vim.keymap.set({''}, '<right>', '<nop>')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer

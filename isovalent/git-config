@@ -1,0 +1,5 @@
+[user]
+	email = james@isovalent.com
+[url "ssh://git@github.com/isovalent"]
+	insteadOf = https://github.com/isovalent
+

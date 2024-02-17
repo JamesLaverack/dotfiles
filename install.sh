@@ -67,6 +67,16 @@ else
   echo "git global_ignore symlink exists"
 fi
 
+git_iso_config_file="${HOME}/.config/git/isovalent-config"
+if ! [ -L "${git_iso_config_file}" ]
+then
+  rm -r "${git_iso_config_file}" || true
+  ln -s "${dotfiles_dir}/isovalent/git-config" "${git_iso_config_file}"
+  echo "Linked Isovalent git config"
+else
+  echo "Isovalent git config symlink exists"
+fi
+
 gnupg_config_file="${HOME}/.gnupg/gpg-agent.conf"
 if ! [ -L "${gnupg_config_file}" ]
 then

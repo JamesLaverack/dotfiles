@@ -46,5 +46,9 @@
 	hunk-header-file-style = red
 	hunk-header-line-number-style = "#067a00"
 	hunk-header-style = file line-number syntax
+
 [alias]
 	fixup = commit --amend --no-edit
+
+[includeIf "gitdir:~/github.com/isovalent/"]
+	path = ./isovalent-config

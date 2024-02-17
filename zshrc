@@ -33,5 +33,8 @@ alias v="nvim"
 
 antigen apply
 
+# Homebrew
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
 # TODO Use a ZSH plugin for this
 eval "$(starship init zsh)"

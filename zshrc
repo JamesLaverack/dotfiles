@@ -31,6 +31,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
+# Krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:${PATH}"
+
 antigen apply
 
 # Homebrew

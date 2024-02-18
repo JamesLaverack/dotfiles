@@ -1,7 +1,5 @@
 cask_args appdir: "/Applications"
 
-tap "homebrew/cask"
-
 # Source control
 brew "git"
 brew "git-delta"

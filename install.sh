@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 echo "ℹ️  Setting up dotfiles"
 
 if [[ $(uname -s) != "Darwin" ]]
@@ -9,10 +8,12 @@ then
 fi
 
 # Install Homebrew if not already installed
-echo "🍺 Installing Homebrew"
 if ! command -v brew &> /dev/null
 then
+  echo "🍺 Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+  echo "🍺 Homebrew Already Installed"
 fi
 
 dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -23,132 +24,59 @@ echo "💻 Installing & updating brew-managed software"
 brew bundle
 
 # TMUX Package Manager
-echo "🪟 Installing the tmux package manager"
 tmux_install_dir="${HOME}/.config/tmux/plugins/tpm"
 if ! [ -d "${tmux_install_dir}" ]
 then
+  echo "🪟 Installing the tmux package manager"
   git clone https://github.com/tmux-plugins/tpm "${tmux_install_dir}"
-  echo "Installed tmux plugin manager"
 else
-  echo "tmux plugin manager already installed"
+  echo "🪟 tmux plugin manager already installed"
 fi
 
 # Set Basic Settings
 echo "🌎 Setting Firefox as the default browser"
 defaultbrowser firefox
 
-echo "📁 Creating useful directories"
-mkdir -p ${HOME}/github.com/
-mkdir -p ${HOME}/Pictures/Screenshots/
-mkdir -p ${HOME}/.gnupg/
-mkdir -p ${HOME}/.config/git
+mkdir_log() {
+  echo "📁 Creating directory $1"
+  mkdir -p $1
+}
+
+# Some useful directories
+mkdir_log "${HOME}/github.com/"
+mkdir_log "${HOME}/Pictures/Screenshots/"
 
 # Symlink everything
+link() {
+  source="$1"
+  target="$2"
+  desc="$3"
+  echo "🔗 Linking ${desc} (${target} → ${source})"
+  ln -s -F -f "${source}" "${target}"
+}
 
-echo "🔗 Symlinking config files"
+config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-git_config_file="${HOME}/.config/git/config"
-if ! [ -L "${git_config_file}" ]
-then
-  rm -r "${git_config_file}" || true
-  ln -s "${dotfiles_dir}/git-config" "${git_config_file}"
-  echo "Linked git config"
-else
-  echo "git config symlink exists"
-fi
+mkdir_log "${config_dir}/git"
+link "${dotfiles_dir}/git-config" "${config_dir}/git/config" "Git Config File"
+link "${dotfiles_dir}/git-global-ignore" "${config_dir}/git/global_gitignore" "Git Global Ignore File"
+link "${dotfiles_dir}/isovalent/git-config" "${config_dir}/git/isovalent-config" "Git Isovalent Settings File"
 
-git_global_ignore_file="${HOME}/.config/git/global_gitignore"
-if ! [ -L "${git_global_ignore_file}" ]
-then
-  rm -r "${git_global_ignore_file}" || true
-  ln -s "${dotfiles_dir}/git-global-ignore" "${git_global_ignore_file}"
-  echo "Linked git global_ignore"
-else
-  echo "git global_ignore symlink exists"
-fi
+mkdir_log "${HOME}/.gnupg"
+link "${dotfiles_dir}/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf" "GNUPG Settings File"
 
-git_iso_config_file="${HOME}/.config/git/isovalent-config"
-if ! [ -L "${git_iso_config_file}" ]
-then
-  rm -r "${git_iso_config_file}" || true
-  ln -s "${dotfiles_dir}/isovalent/git-config" "${git_iso_config_file}"
-  echo "Linked Isovalent git config"
-else
-  echo "Isovalent git config symlink exists"
-fi
+mkdir_log "${config_dir}/alacritty"
+link "${dotfiles_dir}/alacritty.yml" "${config_dir}/alacritty/alacritty.yml" "Alacritty Config File"
+link "${dotfiles_dir}/alacritty-dracula-theme.yml" "${config_dir}/alacritty/dracula-theme.yml" "Alacritty 'Dracula' Theme File"
 
-gnupg_config_file="${HOME}/.gnupg/gpg-agent.conf"
-if ! [ -L "${gnupg_config_file}" ]
-then
-  rm -r "${gnupg_config_file}" || true
-  ln -s "${dotfiles_dir}/gpg-agent.conf" "${gnupg_config_file}"
-  echo "Linked gnupg config"
-else
-  echo "gnupg config symlink exists"
-fi
+link "${dotfiles_dir}/nvim" "${config_dir}/nvim" "Neovim Config Directory"
 
-alacritty_config_file="${HOME}/.config/alacritty/alacritty.yml"
-mkdir -p "$(dirname ${alacritty_config_file})"
-if ! [ -L "${alacritty_config_file}" ]
-then
-  rm -r "${alacritty_config_file}" || true
-  ln -s "${dotfiles_dir}/alacritty.yml" "${alacritty_config_file}"
-  echo "Linked Alacritty config"
-else
-  echo "Alacritty config symlink exists"
-fi
+mkdir_log "${config_dir}/tmux"
+link "${dotfiles_dir}/tmux.conf" "${config_dir}/tmux/tmux.conf" "tmux Config File"
 
-alacritty_theme_file="${HOME}/.config/alacritty/dracula-theme.yml"
-mkdir -p "$(dirname ${alacritty_theme_file})"
-if ! [ -L "${alacritty_theme_file}" ]
-then
-  rm -r "${alacritty_theme_file}" || true
-  ln -s "${dotfiles_dir}/alacritty-dracula-theme.yml" "${alacritty_theme_file}"
-  echo "Linked Alacritty theme"
-else
-  echo "Alacritty theme symlink exists"
-fi
+link "${dotfiles_dir}/zshrc" "${HOME}/.zshrc" "ZSH Config File"
 
-neovim_config_dir="${HOME}/.config/nvim"
-mkdir -p "$(dirname ${neovim_config_dir})"
-if ! [ -L "${neovim_config_dir}" ]
-then
-  rm -r "${neovim_config_dir}" || true
-  ln -s "${dotfiles_dir}/nvim/" "${neovim_config_dir}"
-  echo "Linked Neovim Lua config"
-else
-  echo "Neovim Lua config symlink exists"
-fi
-
-tmux_config_file="${HOME}/.config/tmux/tmux.conf"
-mkdir -p "$(dirname ${tmux_config_file})"
-if ! [ -L "${tmux_config_file}" ]
-then
-  rm -r "${tmux_config_file}" || true
-  ln -s "${dotfiles_dir}/tmux.conf" "${tmux_config_file}"
-  echo "Linked tmux config"
-else
-  echo "tmux config symlink exists"
-fi
-
-zsh_config_file="${HOME}/.zshrc"
-if ! [ -L "${zsh_config_file}" ]
-then
-  rm -r "${zsh_config_file}" || true
-  ln -s "${dotfiles_dir}/zshrc" "${zsh_config_file}"
-  echo "Linked zsh config"
-else
-  echo "zsh config symlink exists"
-fi
-
-starship_config_file="${HOME}/.config/starship.toml"
-if ! [ -L "${starship_config_file}" ]
-then
-  rm -r "${starship_config_file}" || true
-  ln -s "${dotfiles_dir}/starship.toml" "${starship_config_file}"
-  echo "Linked starship config"
-else
-  echo "starship config symlink exists"
-fi
+mkdir_log "${config_dir}/tmux"
+link "${dotfiles_dir}/starship.toml" "${config_dir}/starship.toml" "Starship Config File"
 
 echo "🚀 Done"

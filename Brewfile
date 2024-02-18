@@ -15,7 +15,6 @@ brew "starship"
 # Utilities
 brew "coreutils"
 brew "defaultbrowser"
-brew "exa"
 brew "gron"
 brew "htop"
 brew "jq"

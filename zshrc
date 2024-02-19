@@ -7,13 +7,13 @@ COMPLETION_WAITING_DOTS="true"
 
 antigen use oh-my-zsh
 
+antigen bundle colored-man-pages
 antigen bundle git
 antigen bundle kubectl
-antigen bundle terraform
-antigen bundle colored-man-pages
 antigen bundle rust
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle terraform
 antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Run any local settings files
 find "${HOME}/.config/zsh/local" -type f -name '*.zsh' 2>/dev/null | while IFS= read -r line ; do source $line; done

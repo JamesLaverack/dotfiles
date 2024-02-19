@@ -1,9 +1,7 @@
-# Correctly source Homebrew to be able to use Antigen and others
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Oh My ZSH
+# Use Antigen to configure the shell
 source $(brew --prefix)/share/antigen/antigen.zsh
 
+# Oh my ZSH settings
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
@@ -17,39 +15,10 @@ antigen bundle rust
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 
-# GPG Agent
-GPG_TTY=$(tty)
-export GPG_TTY
-
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-
-export LANG=en_GB.UTF-8
-
-# Vim config
-export EDITOR=nvim
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
-
-# Krew
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:${PATH}"
-
-antigen apply
-
-# Homebrew
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-
-# Cilium CLI config
-export CILIUM_CLI_MODE="helm"
-
-# Go
-export PATH="${PATH}:$(go env GOPATH)/bin"
-
 # Run any local settings files
 find "${HOME}/.config/zsh/local" -type f -name '*.zsh' 2>/dev/null | while IFS= read -r line ; do source $line; done
+
+antigen apply
 
 # TODO Use a ZSH plugin for this
 eval "$(starship init zsh)"

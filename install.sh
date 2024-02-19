@@ -75,6 +75,7 @@ mkdir_log "${config_dir}/tmux"
 link "${dotfiles_dir}/tmux.conf" "${config_dir}/tmux/tmux.conf" "tmux Config File"
 
 link "${dotfiles_dir}/zshrc" "${HOME}/.zshrc" "ZSH Config File"
+link "${dotfiles_dir}/zshenv" "${HOME}/.zshenv" "ZSH Environment File"
 
 mkdir_log "${config_dir}/tmux"
 link "${dotfiles_dir}/starship.toml" "${config_dir}/starship.toml" "Starship Config File"

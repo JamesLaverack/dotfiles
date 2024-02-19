@@ -1,0 +1,28 @@
+import = ["~/.config/alacritty/dracula-theme.toml"]
+
+[font]
+size = 18
+
+[font.normal]
+# Yes, this is Source Code Pro. I don't know why it's spelt like this in the Nerd Font. It just is.
+family = "SauceCodePro Nerd Font Mono"
+
+# Disable ⌘Q to prevent accidental exit
+[[keyboard.bindings]]
+action = "None"
+key = "Q"
+mods = "Command"
+
+# Disable ⌘W to prevent accidental exit
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mods = "Command"
+
+[window]
+dynamic_title = false
+title = "Terminal"
+
+[window.padding]
+x = 10
+y = 10

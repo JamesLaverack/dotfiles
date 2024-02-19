@@ -66,7 +66,7 @@ mkdir_log "${HOME}/.gnupg"
 link "${dotfiles_dir}/gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf" "GNUPG Settings File"
 
 mkdir_log "${config_dir}/alacritty"
-link "${dotfiles_dir}/alacritty.yml" "${config_dir}/alacritty/alacritty.yml" "Alacritty Config File"
+link "${dotfiles_dir}/alacritty.toml" "${config_dir}/alacritty/alacritty.toml" "Alacritty Config File"
 link "${dotfiles_dir}/alacritty-dracula-theme.toml" "${config_dir}/alacritty/dracula-theme.toml" "Alacritty 'Dracula' Theme File"
 
 link "${dotfiles_dir}/nvim" "${config_dir}/nvim" "Neovim Config Directory"

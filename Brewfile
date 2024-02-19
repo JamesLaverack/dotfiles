@@ -17,6 +17,7 @@ brew "coreutils"
 brew "defaultbrowser"
 brew "gron"
 brew "htop"
+brew "icdiff"
 brew "jq"
 brew "nmap"
 brew "tmux"
@@ -26,10 +27,12 @@ brew "wget"
 brew "yq"
 
 # Kubernetes & Containers
+brew "helm"
 brew "kind"
 brew "kubebuilder"
 brew "kubernetes-cli"
 brew "kustomize"
+brew "podman"
 
 # Language Toolchains
 brew "go"
@@ -38,6 +41,7 @@ brew "rustup"
 # Security
 brew "gnupg"
 brew "pinentry-mac"
+brew "ykman"
 
 # Applications
 cask "1password"

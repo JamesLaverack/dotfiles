@@ -49,6 +49,7 @@
 
 [alias]
 	fixup = commit --amend --no-edit
+	ds = diff --staged
 
 [includeIf "gitdir:~/github.com/isovalent/"]
 	path = ./isovalent-config

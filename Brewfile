@@ -36,6 +36,8 @@ brew "podman"
 
 # Language Toolchains
 brew "go"
+brew "lua-language-server"
+brew "rust-analyzer"
 brew "rustup"
 
 # Security

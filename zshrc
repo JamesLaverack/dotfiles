@@ -7,8 +7,10 @@ COMPLETION_WAITING_DOTS="true"
 
 antigen use oh-my-zsh
 
+antigen bundle brew
 antigen bundle colored-man-pages
 antigen bundle git
+antigen bundle golang
 antigen bundle kubectl
 antigen bundle rust
 antigen bundle terraform

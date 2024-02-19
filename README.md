@@ -10,12 +10,11 @@ cd ~/github.com/jameslaverack
 git clone https://github.com/JamesLaverack/dotfiles.git
 cd dotfiles
 ./install.sh
-./tweaks-macos.sh
+./tweaks.sh
 ```
 
 ## Manual Config
 
-* Site-local git config (principally default email address)
 * Site-local Homebrew packages
 * Install Packer for nvim
 * Install language servers via Mason in nvim

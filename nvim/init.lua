@@ -177,6 +177,10 @@ require('lspconfig').rust_analyzer.setup {
 		},
 	},
 }
+require('lspconfig').gopls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
 
 -- Floaterm
 vim.keymap.set('n', '<leader>ft', ':FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 zsh <CR> ',

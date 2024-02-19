@@ -52,7 +52,7 @@ link() {
   target="$2"
   desc="$3"
   echo "🔗 Linking ${desc} (${target} → ${source})"
-  ln -s -F -f "${source}" "${target}"
+  ln -s -F -f -h "${source}" "${target}"
 }
 
 config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"

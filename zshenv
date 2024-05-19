@@ -32,7 +32,9 @@ if [ -n "$(command -v cilium)" ]; then
   export CILIUM_CLI_MODE="helm"
 fi
 
+# Go binaries built with `go install`
+if [ -n "$(command -v go)" ]; then
+  export PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
-# Go
-export PATH="${PATH}:$(go env GOPATH)/bin"
 

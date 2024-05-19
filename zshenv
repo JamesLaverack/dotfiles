@@ -37,4 +37,9 @@ if [ -n "$(command -v go)" ]; then
   export PATH="$PATH:$(go env GOPATH)/bin"
 fi
 
+# Rust toolchian from rustup
+rust_bin="${HOME}/.cargo/bin"
+if [ -d "$rust_bin" ]; then
+  export PATH="$PATH:$rust_bin"
+fi
 

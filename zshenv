@@ -27,9 +27,11 @@ if [ -d "$krew_bin" ] ; then
   export PATH="$PATH:$krew_bin"
 fi
 
+# Cilium configuration
+if [ -n "$(command -v cilium)" ]; then
+  export CILIUM_CLI_MODE="helm"
+fi
 
-# Cilium
-export CILIUM_CLI_MODE="helm"
 
 # Go
 export PATH="${PATH}:$(go env GOPATH)/bin"

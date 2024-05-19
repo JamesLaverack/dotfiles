@@ -21,8 +21,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
-# Krew
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:${PATH}"
+# Krew plugins
+krew_bin="${KREW_ROOT:-$HOME/.krew}/bin"
+if [ -d "$krew_bin" ] ; then
+  export PATH="$PATH:$krew_bin"
+fi
 
 
 # Cilium

@@ -23,16 +23,6 @@ cd ${dotfiles_dir}
 echo "💻 Installing & updating brew-managed software"
 brew bundle
 
-# TMUX Package Manager
-tmux_install_dir="${HOME}/.config/tmux/plugins/tpm"
-if ! [ -d "${tmux_install_dir}" ]
-then
-  echo "🪟 Installing the tmux package manager"
-  git clone https://github.com/tmux-plugins/tpm "${tmux_install_dir}"
-else
-  echo "🪟 tmux plugin manager already installed"
-fi
-
 # Set Basic Settings
 echo "🌎 Setting Firefox as the default browser"
 defaultbrowser firefox
@@ -71,13 +61,9 @@ link "${dotfiles_dir}/alacritty-dracula-theme.toml" "${config_dir}/alacritty/dra
 
 link "${dotfiles_dir}/nvim" "${config_dir}/nvim" "Neovim Config Directory"
 
-mkdir_log "${config_dir}/tmux"
-link "${dotfiles_dir}/tmux.conf" "${config_dir}/tmux/tmux.conf" "tmux Config File"
-
 link "${dotfiles_dir}/zshrc" "${HOME}/.zshrc" "ZSH Config File"
 link "${dotfiles_dir}/zshenv" "${HOME}/.zshenv" "ZSH Environment File"
 
-mkdir_log "${config_dir}/tmux"
 link "${dotfiles_dir}/starship.toml" "${config_dir}/starship.toml" "Starship Config File"
 
 echo "🚀 Done"

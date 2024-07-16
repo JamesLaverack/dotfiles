@@ -16,6 +16,4 @@ cd dotfiles
 ## Manual Config
 
 * Site-local Homebrew packages
-* Install Packer for nvim
-* Install language servers via Mason in nvim
 * Configure gpg-agent correctly

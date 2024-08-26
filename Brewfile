@@ -15,6 +15,7 @@ brew "starship"
 # Utilities
 brew "coreutils"
 brew "defaultbrowser"
+brew "fzf"
 brew "gron"
 brew "htop"
 brew "icdiff"

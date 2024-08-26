@@ -1,3 +1,4 @@
 function ciliumexec
-  kubectl exec --namespace kube-system --stdin --tty $(kubectl get pod --namespace kube-system --selector 'k8s-app=cilium' --output jsonpath='{.items..metadata.name}') -- $argv
+  kubectl --namespace=kube-system exec -it (ciliumpod) --container=cilium-agent -- $argv
 end
+

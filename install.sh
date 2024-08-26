@@ -61,8 +61,7 @@ link "${dotfiles_dir}/alacritty-dracula-theme.toml" "${config_dir}/alacritty/dra
 
 link "${dotfiles_dir}/nvim" "${config_dir}/nvim" "Neovim Config Directory"
 
-link "${dotfiles_dir}/zshrc" "${HOME}/.zshrc" "ZSH Config File"
-link "${dotfiles_dir}/zshenv" "${HOME}/.zshenv" "ZSH Environment File"
+link "${dotfiles_dir}/fish" "${config_dir}/fish/" "Fish Config Directory"
 
 link "${dotfiles_dir}/starship.toml" "${config_dir}/starship.toml" "Starship Config File"
 

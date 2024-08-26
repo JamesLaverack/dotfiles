@@ -6,11 +6,8 @@ brew "git-delta"
 brew "svn"
 
 # Terminal & Editors
-brew "antigen"
 brew "bash"
 brew "neovim"
-brew "zsh"
-brew "starship"
 
 # Utilities
 brew "coreutils"

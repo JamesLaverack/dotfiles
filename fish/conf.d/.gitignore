@@ -1,2 +1,5 @@
 # Allow individual sites to source their correct homebrew config here
 homebrew.fish
+# Allow a general site config file
+site.fish
+

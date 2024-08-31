@@ -13,7 +13,19 @@ if command -q gpgconf
 end
 
 # Kubernetes
-abbr -a k kubectl
+if command -q kubectl
+  abbr -a k kubectl
+  kubectl completion fish | source
+  if command -q kubecolor
+    abbr -a kubecolour kubecolor
+    function kubectl --wraps kubectl
+      command kubecolor $argv
+    end
+    function kubecolor --wraps kubectl
+      command kubecolor $argv
+    end
+  end
+end
 
 # Rust
 set rust_bin "$HOME/.cargo/bin"

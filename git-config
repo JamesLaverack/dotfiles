@@ -48,7 +48,7 @@
 	hunk-header-style = file line-number syntax
 
 [alias]
-	fixup = commit --amend --no-edit
+	oops = commit --amend --no-edit
 	ds = diff --staged
 
 [includeIf "gitdir:~/github.com/isovalent/"]

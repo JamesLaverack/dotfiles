@@ -30,7 +30,7 @@ end
 # Rust
 set rust_bin "$HOME/.cargo/bin"
 if test -d $rust_bin
-  fish_add_path $rust_bin
+  fish_add_path -a $rust_bin
 end
 
 # Cilium

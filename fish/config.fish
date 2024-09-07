@@ -33,6 +33,14 @@ if test -d $rust_bin
   fish_add_path -a $rust_bin
 end
 
+if command -q go
+  if test "$(go env GOBIN)" = ''
+    fish_add_path -a "$(go env GOPATH)/bin"
+  else
+    fish_add_path -a "$(go env GOBIN)"
+  end
+end
+
 # Cilium
 if command -q cilium
   set -gx CILIUM_CLI_MODE helm

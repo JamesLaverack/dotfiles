@@ -50,6 +50,8 @@
 [alias]
 	oops = commit --amend --no-edit
 	ds = diff --staged
+	pushfwl = push --force-with-lease
+	st = status
 
 [includeIf "gitdir:~/github.com/isovalent/"]
 	path = ./isovalent-config

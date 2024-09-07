@@ -1,11 +1,10 @@
 import = ["~/.config/alacritty/dracula-theme.toml"]
 
 [font]
-size = 18
+size = 22
 
 [font.normal]
-# Yes, this is Source Code Pro. I don't know why it's spelt like this in the Nerd Font. It just is.
-family = "SauceCodePro Nerd Font Mono"
+family = "Departure Mono"
 
 # Disable ⌘Q to prevent accidental exit
 [[keyboard.bindings]]

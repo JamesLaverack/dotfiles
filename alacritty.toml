@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/dracula-theme.toml"]
 size = 22
 
 [font.normal]
-family = "Departure Mono"
+family = "DepartureMono Nerd Font"
 
 # Disable ⌘Q to prevent accidental exit
 [[keyboard.bindings]]

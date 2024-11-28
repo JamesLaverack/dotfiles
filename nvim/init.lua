@@ -87,9 +87,7 @@ require("lazy").setup({
           desc = "Focus Tree",
         },
       },
-    },
-    {
-      "nvim-tree/nvim-web-devicons"
+      dependencies = { "nvim-tree/nvim-web-devicons" },
     },
   },
   -- Configure any other settings here. See the documentation for more details.

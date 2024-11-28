@@ -57,6 +57,7 @@ cask "zoom"
 
 # Fonts
 tap "homebrew/cask-fonts"
-cask "font-source-code-pro"
+cask "font-departure-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
+cask "font-source-code-pro"
 

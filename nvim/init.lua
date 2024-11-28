@@ -89,6 +89,41 @@ require("lazy").setup({
       },
       dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.8',
+      keys = {
+        {
+          "<leader>ff",
+          function()
+            require("telescope.builtin").find_files()
+          end,
+          desc = "Find Files",
+        },
+        {
+          "<leader>fg",
+          function()
+            require("telescope.builtin").live_grep()
+          end,
+          desc = "Live Grep",
+        },
+        {
+          "<leader>fb",
+          function()
+            require("telescope.builtin").buffers()
+          end,
+          desc = "Buffers",
+        },
+        {
+          "<leader>fh",
+          function()
+            require("telescope.builtin").help_tags()
+          end,
+          desc = "Help Tags",
+        },
+      },
+      dependencies = { 'nvim-lua/plenary.nvim' },
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

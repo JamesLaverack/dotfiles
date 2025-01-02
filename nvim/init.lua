@@ -98,7 +98,7 @@ require("lazy").setup({
           function()
             require("telescope.builtin").find_files()
           end,
-          desc = "Find Files",
+          desc = "Files",
         },
         {
           "<leader>fg",

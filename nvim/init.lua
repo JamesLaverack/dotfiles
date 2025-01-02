@@ -124,6 +124,38 @@ require("lazy").setup({
       },
       dependencies = { 'nvim-lua/plenary.nvim' },
     },
+    {
+      "neovim/nvim-lspconfig",
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+        require("lspconfig").rust_analyzer.setup({})
+        for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+            local default_diagnostic_handler = vim.lsp.handlers[method]
+            vim.lsp.handlers[method] = function(err, result, context, config)
+                if err ~= nil and err.code == -32802 then
+                    return
+                end
+                return default_diagnostic_handler(err, result, context, config)
+            end
+        end
+      end,
+      keys = {
+        {
+          "<leader>d",
+          function()
+            vim.diagnostic.open_float()
+          end,
+          desc = "Show Diagnostic",
+        },
+        {
+          "<leader>c",
+          function()
+            vim.lsp.buf.definition()
+          end,
+          desc = "Complete",
+        },
+      },
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

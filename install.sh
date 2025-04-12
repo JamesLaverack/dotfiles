@@ -63,4 +63,7 @@ link "${dotfiles_dir}/nvim" "${config_dir}/nvim" "Neovim Config Directory"
 
 link "${dotfiles_dir}/fish" "${config_dir}/fish/" "Fish Config Directory"
 
+mkdir_log "${config_dir}/ghostty"
+link "${dotfiles_dir}/ghostty" "${config_dir}/ghostty/config" "Ghostty Config File"
+
 echo "🚀 Done"

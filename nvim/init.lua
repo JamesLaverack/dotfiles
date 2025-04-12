@@ -32,6 +32,13 @@ vim.opt.listchars:append "space:⋅"
 -- Shortcuts to avoid CTRL- bindings, which I find annoying
 vim.keymap.set('n', '<leader>w', '<c-w>', {desc = "Windows", remap = true})
 
+vim.filetype.add({
+ extension = {
+   tofu = 'tf',
+ },
+})
+
+
 require("lazy").setup({
   spec = {
     {

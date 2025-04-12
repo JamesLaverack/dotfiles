@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # Language
 set -gx LANG en_GB.UTF-8
 
@@ -30,10 +32,13 @@ end
 # Rust
 set rust_bin "$HOME/.cargo/bin"
 if test -d $rust_bin
+  # Add the bin directory used by `cargo install` to the PATH
   fish_add_path -a $rust_bin
 end
 
+# Go
 if command -q go
+  # Add the "GOBIN" to the PATH
   if test "$(go env GOBIN)" = ''
     fish_add_path -a "$(go env GOPATH)/bin"
   else
@@ -43,13 +48,18 @@ end
 
 # Cilium
 if command -q cilium
+  # Instruct Cilium CLI to always use the Helm installation mode
   set -gx CILIUM_CLI_MODE helm
 end
 
+# Use Neovim as editor in interactive mode
 if status is-interactive
   # Neovim
   abbr -a vim nvim
   abbr -a vi nvim
   set -gx EDITOR nvim
 end
+
+# Disable Fish greeting
+set -g fish_greeting
 

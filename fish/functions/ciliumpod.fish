@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function ciliumpod
   kubectl get \
     pod \

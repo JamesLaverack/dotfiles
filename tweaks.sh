@@ -12,15 +12,8 @@ sudo -v
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-# Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
@@ -28,24 +21,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
-
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-###############################################################################
-# Screen                                                                      #
-###############################################################################
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
+# Increase sound quality for Bluetooth headphones/headset
 # Save screenshots to a special directory
 defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
@@ -62,12 +38,6 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
-# Hide icons for hard drives, servers, and removable media on the desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -156,8 +126,6 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom right screen corner → Start screen saver
-defaults write com.apple.dock wvous-br-corner -int 5
-defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Time Machine                                                                #
@@ -191,21 +159,6 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
-
-# Enable the automatic update check
-defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
-
-# Check for software updates daily, not just once per week
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-# Download newly available updates in background
-defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
-
-# Install System data files & security updates
-defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
-
-# Turn on app auto-update
-defaults write com.apple.commerce AutoUpdate -bool true
 
 ###############################################################################
 # Photos                                                                      #

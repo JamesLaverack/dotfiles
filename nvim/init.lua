@@ -93,6 +93,13 @@ require("lazy").setup({
           end,
           desc = "Focus Tree",
         },
+        {
+          "<leader>T",
+          function()
+            require("nvim-tree.api").tree.close()
+          end,
+          desc = "Close Tree",
+        },
       },
       dependencies = { "nvim-tree/nvim-web-devicons" },
     },

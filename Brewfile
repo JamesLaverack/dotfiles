@@ -26,10 +26,8 @@ brew "yq"
 # Kubernetes & Containers
 brew "helm"
 brew "kind"
-brew "kubebuilder"
 brew "kubecolor"
 brew "kubernetes-cli"
-brew "kustomize"
 brew "podman"
 
 # Language Toolchains
@@ -46,14 +44,12 @@ brew "ykman"
 
 # Applications
 cask "1password"
-cask "alacritty"
 cask "firefox"
+cask "ghostty"
 cask "goland"
 cask "google-cloud-sdk"
 cask "gpg-suite"
-cask "notion"
 cask "slack"
-cask "zoom"
 
 # Fonts
 tap "homebrew/cask-fonts"

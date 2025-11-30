@@ -1,7 +1,0 @@
-# IntelliJ IDEA & other JetBrains IDEs
-*.idea
-*.iml
-
-# macOS files
-.DS_Store
-
